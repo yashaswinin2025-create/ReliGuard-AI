@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReliGuard AI - Engineering</title>
+    <link rel="stylesheet" href="engineering.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <h2>ReliGuard AI <span>1.0</span></h2>
+        <a href="../index.html">← Back to Home</a>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <p class="tag">ENGINEERING INTELLIGENCE</p>
+            <h1>Build Better. Debug Smarter.</h1>
+            <p>Analyze your software project, understand errors
+               and explore intelligent solutions.</p>
+        </section>
+
+        <section class="upload-card">
+            <h2>🔍 Project Analyzer</h2>
+            <p>Choose a project folder or supported source file to begin.</p>
+
+            <label for="projectFile">Select Project File</label>
+            <input type="file" id="projectFile" multiple
+                   accept=".py,.js,.html,.css,.java,.cpp,.c,.json,.txt">
+
+            <button id="analyzeBtn">Analyze Project</button>
+            <p id="fileStatus">No files selected yet.</p>
+        </section>
+
+        <section class="results">
+            <h2>Analysis Dashboard</h2>
+
+            <div class="result-grid">
+                <div class="result-card">
+                    <h3>Project Status</h3>
+                    <p id="projectStatus">Waiting for analysis</p>
+                </div>
+
+                <div class="result-card">
+                    <h3>Detected Issues</h3>
+                    <p id="issueCount">Not analyzed</p>
+                </div>
+
+                <div class="result-card">
+                    <h3>Suggested Fixes</h3>
+                    <p id="fixStatus">Not available yet</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="output-card">
+            <h2>AI Analysis & Recommendations</h2>
+            <div id="analysisOutput">
+                <p>Your project analysis results will appear here.</p>
+            </div>
+        </section>
+
+        <section class="safety-note">
+            <p>🔒 Your approval matters. Review suggested changes before applying them.</p>
+        </section>
+
+    </main>
+
+    <footer>
+        ReliGuard AI | Engineering Intelligence
+    </footer>
+<script src="engineering.js"></script>
+</body>
+</html>

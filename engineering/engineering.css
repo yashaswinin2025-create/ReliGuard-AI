@@ -1,0 +1,167 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #071426;
+    color: #ffffff;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 7%;
+    background: #0d2038;
+    border-bottom: 1px solid #183c5b;
+}
+
+.navbar h2 {
+    color: #35d9f5;
+}
+
+.navbar h2 span {
+    color: white;
+}
+
+.navbar a {
+    color: #35d9f5;
+    text-decoration: none;
+}
+
+.container {
+    width: 86%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+.welcome {
+    padding: 35px 0;
+}
+
+.tag {
+    color: #35d9f5;
+    letter-spacing: 3px;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.welcome h1 {
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.welcome p:last-child {
+    color: #b8c9dc;
+    line-height: 1.7;
+}
+
+.upload-card,
+.output-card {
+    background: #10243c;
+    border: 1px solid #244767;
+    padding: 28px;
+    border-radius: 14px;
+    margin: 25px 0;
+}
+
+.upload-card h2,
+.output-card h2 {
+    color: #35d9f5;
+    margin-bottom: 15px;
+}
+
+.upload-card p {
+    color: #bdcbdc;
+    margin: 15px 0;
+}
+
+.upload-card input {
+    display: block;
+    margin: 15px 0;
+    padding: 12px;
+    width: 100%;
+    background: #091a2d;
+    color: white;
+    border: 1px solid #35d9f5;
+    border-radius: 7px;
+}
+
+button {
+    background: #12bcd8;
+    color: #061426;
+    padding: 13px 24px;
+    border: none;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #65eaff;
+}
+
+.results {
+    margin: 35px 0;
+}
+
+.results h2 {
+    margin-bottom: 20px;
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.result-card {
+    background: #10243c;
+    border: 1px solid #244767;
+    padding: 22px;
+    border-radius: 12px;
+}
+
+.result-card h3 {
+    color: #35d9f5;
+    margin-bottom: 15px;
+}
+
+.result-card p {
+    color: #bdcbdc;
+}
+
+#analysisOutput {
+    color: #bdcbdc;
+    line-height: 1.7;
+}
+
+.safety-note {
+    padding: 18px;
+    background: #102b35;
+    border-left: 4px solid #35d9f5;
+    border-radius: 7px;
+    color: #bdeefa;
+    margin: 25px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #9aafc5;
+    border-top: 1px solid #183c5b;
+}
+
+@media (max-width: 700px) {
+    .result-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome h1 {
+        font-size: 28px;
+    }
+}
