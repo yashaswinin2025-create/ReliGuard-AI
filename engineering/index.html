@@ -4,74 +4,500 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReliGuard AI - Engineering</title>
+
+    <title>ReliGuard AI 2.0 | Engineering Intelligence</title>
+
     <link rel="stylesheet" href="engineering.css">
 </head>
+
 <body>
 
+    <!-- NAVIGATION -->
     <header class="navbar">
-        <h2>ReliGuard AI <span>1.0</span></h2>
-        <a href="../index.html">← Back to Home</a>
+
+        <div class="brand">
+            <div class="brand-icon">R</div>
+
+            <div>
+                <h2>ReliGuard AI <span>2.0</span></h2>
+                <small>ENGINEERING INTELLIGENCE</small>
+            </div>
+        </div>
+
+        <a href="../index.html" class="back-link">
+            ← Back to Home
+        </a>
+
     </header>
 
-    <main class="container">
 
-        <section class="welcome">
-            <p class="tag">ENGINEERING INTELLIGENCE</p>
-            <h1>Build Better. Debug Smarter.</h1>
-            <p>Analyze your software project, understand errors
-               and explore intelligent solutions.</p>
-        </section>
+    <main class="workspace">
 
-        <section class="upload-card">
-            <h2>🔍 Project Analyzer</h2>
-            <p>Choose a project folder or supported source file to begin.</p>
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
 
-            <label for="projectFile">Select Project File</label>
-            <input type="file" id="projectFile" multiple
-                   accept=".py,.js,.html,.css,.java,.cpp,.c,.json,.txt">
+            <div class="sidebar-top">
 
-            <button id="analyzeBtn">Analyze Project</button>
-            <p id="fileStatus">No files selected yet.</p>
-        </section>
+                <p class="sidebar-label">WORKSPACE</p>
 
-        <section class="results">
-            <h2>Analysis Dashboard</h2>
+                <button class="new-chat-btn" id="newChatBtn">
+                    + New Analysis
+                </button>
 
-            <div class="result-grid">
-                <div class="result-card">
-                    <h3>Project Status</h3>
-                    <p id="projectStatus">Waiting for analysis</p>
+                <div class="sidebar-item active">
+                    <span>⌘</span>
+                    Code Assistant
                 </div>
 
-                <div class="result-card">
-                    <h3>Detected Issues</h3>
-                    <p id="issueCount">Not analyzed</p>
+                <div class="sidebar-item" id="openProjectScanner">
+                    <span>▤</span>
+                    Project Scanner
                 </div>
 
-                <div class="result-card">
-                    <h3>Suggested Fixes</h3>
-                    <p id="fixStatus">Not available yet</p>
+                <div class="sidebar-item" id="openRepair">
+                    <span>⚙</span>
+                    Project Repair
                 </div>
+
             </div>
-        </section>
 
-        <section class="output-card">
-            <h2>AI Analysis & Recommendations</h2>
-            <div id="analysisOutput">
-                <p>Your project analysis results will appear here.</p>
+            <div class="sidebar-bottom">
+
+                <div class="backend-indicator">
+                    <span class="status-dot"></span>
+                    Backend Connected
+                </div>
+
+                <small>ReliGuard Engineering v2.0</small>
+
             </div>
-        </section>
 
-        <section class="safety-note">
-            <p>🔒 Your approval matters. Review suggested changes before applying them.</p>
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <section class="main-panel">
+
+            <!-- WELCOME -->
+            <section class="welcome">
+
+                <div class="welcome-badge">
+                    ENGINEERING INTELLIGENCE
+                </div>
+
+                <h1>
+                    Build Better.<br>
+                    <span>Debug Smarter.</span>
+                </h1>
+
+                <p>
+                    Your engineering assistant for code analysis,
+                    project diagnostics and intelligent repair.
+                </p>
+
+            </section>
+
+
+            <!-- QUICK ACTIONS -->
+            <section class="quick-actions">
+
+                <button class="action-card" id="quickAnalyze">
+                    <span class="action-icon">⌘</span>
+
+                    <span>
+                        <strong>Analyze Code</strong>
+                        <small>Detect code issues</small>
+                    </span>
+                </button>
+
+                <button class="action-card" id="quickProject">
+                    <span class="action-icon">▤</span>
+
+                    <span>
+                        <strong>Scan Project</strong>
+                        <small>Inspect a ZIP project</small>
+                    </span>
+                </button>
+
+                <button class="action-card" id="quickImage">
+                    <span class="action-icon">▧</span>
+
+                    <span>
+                        <strong>Image to Code</strong>
+                        <small>Extract code from images</small>
+                    </span>
+                </button>
+
+            </section>
+
+
+            <!-- CHAT AREA -->
+            <section class="chat-workspace">
+
+                <div class="chat-heading">
+
+                    <div>
+                        <h2>ReliGuard Code Assistant</h2>
+
+                        <p>
+                            Describe your engineering problem
+                            or upload your source code.
+                        </p>
+                    </div>
+
+                    <span class="online-status">
+                        <span class="status-dot"></span>
+                        ONLINE
+                    </span>
+
+                </div>
+
+
+                <!-- CHAT MESSAGES -->
+                <div
+                    id="chatMessages"
+                    class="chat-messages"
+                    aria-live="polite"
+                >
+
+                    <div class="assistant-message">
+
+                        <div class="message-avatar">
+                            R
+                        </div>
+
+                        <div class="message-content">
+
+                            <strong>ReliGuard AI</strong>
+
+                            <p>
+                                Welcome to ReliGuard Engineering.
+                                I can help inspect your source code,
+                                identify potential issues, analyze
+                                complete projects and suggest
+                                supported corrections.
+                            </p>
+
+                            <p>
+                                Upload your code or describe the
+                                problem you are facing.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- COMPOSER -->
+                <div class="composer">
+
+                    <!-- ATTACHMENT MENU -->
+                    <div class="attachment-wrapper">
+
+                        <button
+                            type="button"
+                            id="attachmentBtn"
+                            class="attachment-btn"
+                            aria-label="Open attachment options"
+                        >
+                            +
+                        </button>
+
+                        <div
+                            id="attachmentMenu"
+                            class="attachment-menu hidden"
+                        >
+
+                            <button type="button" id="uploadCodeOption">
+                                <span>⌘</span>
+                                Upload Code Files
+                            </button>
+
+                            <button type="button" id="uploadImageOption">
+                                <span>▧</span>
+                                Upload Image
+                            </button>
+
+                            <button type="button" id="cameraOption">
+                                <span>◉</span>
+                                Use Camera
+                            </button>
+
+                            <button type="button" id="uploadZipOption">
+                                <span>▤</span>
+                                Upload Project ZIP
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MESSAGE INPUT -->
+                    <textarea
+                        id="chatInput"
+                        placeholder="Describe your coding problem or paste your code..."
+                        rows="2"
+                    ></textarea>
+
+
+                    <!-- MICROPHONE PLACEHOLDER -->
+                    <button
+                        type="button"
+                        id="micBtn"
+                        class="mic-btn"
+                        title="Voice input"
+                        aria-label="Voice input"
+                    >
+                        🎙
+                    </button>
+
+
+                    <!-- SEND -->
+                    <button
+                        type="button"
+                        id="sendBtn"
+                        class="send-btn"
+                        aria-label="Send message"
+                    >
+                        ↑
+                    </button>
+
+                </div>
+
+
+                <p class="composer-note">
+                    Review suggested changes before applying repairs.
+                    ReliGuard does not execute uploaded code.
+                </p>
+
+
+                <!-- HIDDEN FILE INPUTS -->
+                <input
+                    type="file"
+                    id="projectFile"
+                    multiple
+                    accept=".py,.js,.html,.css,.java,.cpp,.c,.json,.txt"
+                    hidden
+                >
+
+                <input
+                    type="file"
+                    id="imageFile"
+                    accept="image/*"
+                    hidden
+                >
+
+                <input
+                    type="file"
+                    id="cameraFile"
+                    accept="image/*"
+                    capture="environment"
+                    hidden
+                >
+
+                <input
+                    type="file"
+                    id="zipProject"
+                    accept=".zip"
+                    hidden
+                >
+
+                <!-- FILE STATUS -->
+                <div
+                    id="fileStatus"
+                    class="file-status"
+                    aria-live="polite"
+                >
+                    No files selected yet.
+                </div>
+
+            </section>
+
+
+            <!-- PROJECT SCANNER -->
+            <section class="tool-section" id="projectScanner">
+
+                <div class="section-heading">
+                    <h2>Project Intelligence Scanner</h2>
+
+                    <p>
+                        Upload a complete website or application
+                        as a ZIP file for project-level analysis.
+                    </p>
+                </div>
+
+                <label for="zipProjectVisible">
+                    Select Complete Project ZIP
+                </label>
+
+                <input
+                    type="file"
+                    id="zipProjectVisible"
+                    accept=".zip"
+                >
+
+                <button id="scanZipBtn">
+                    Scan Complete Project
+                </button>
+
+                <p id="zipStatus" aria-live="polite">
+                    No ZIP project selected.
+                </p>
+
+                <div class="repair-section" id="repairSection">
+
+                    <h3>Project Repair</h3>
+
+                    <p>
+                        Review findings and approve supported
+                        corrections before downloading a repaired copy.
+                    </p>
+
+                    <button id="repairZipBtn" disabled>
+                        Repair Complete Project
+                    </button>
+
+                    <p id="repairStatus" aria-live="polite">
+                        Scan your project first to enable repair.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- ANALYSIS DASHBOARD -->
+            <section class="results">
+
+                <div class="section-heading">
+                    <h2>Analysis Dashboard</h2>
+
+                    <p>
+                        Live project diagnostics and analysis summary.
+                    </p>
+                </div>
+
+                <div class="result-grid">
+
+                    <div class="result-card">
+                        <h3>Project Status</h3>
+
+                        <p id="projectStatus">
+                            Waiting for analysis
+                        </p>
+                    </div>
+
+                    <div class="result-card">
+                        <h3>Detected Issues</h3>
+
+                        <p id="issueCount">
+                            Not analyzed
+                        </p>
+                    </div>
+
+                    <div class="result-card">
+                        <h3>Suggested Fixes</h3>
+
+                        <p id="fixStatus">
+                            Not available yet
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ANALYSIS OUTPUT -->
+            <section class="output-card">
+
+                <h2>AI Analysis & Recommendations</h2>
+
+                <div id="analysisOutput" aria-live="polite">
+
+                    <p>
+                        Your project analysis results will appear here.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- REPAIR OUTPUT -->
+            <section class="output-card">
+
+                <h2>Project Repair Report</h2>
+
+                <div id="repairReport" aria-live="polite">
+
+                    <p>
+                        Your repair summary will appear here
+                        after project repair.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- CAMERA PREVIEW -->
+            <section
+                class="camera-section hidden"
+                id="cameraSection"
+            >
+
+                <h3>Camera Capture</h3>
+
+                <video
+                    id="cameraPreview"
+                    autoplay
+                    playsinline
+                ></video>
+
+                <button id="captureImageBtn">
+                    Capture Image
+                </button>
+
+                <button id="closeCameraBtn">
+                    Close Camera
+                </button>
+
+                <canvas id="cameraCanvas" hidden></canvas>
+
+            </section>
+
+
+            <!-- SAFETY -->
+            <section class="safety-note">
+
+                <strong>Security and Project Protection</strong>
+
+                <p>
+                    Original files are not overwritten.
+                    Supported repairs are provided as separate copies.
+                </p>
+
+                <p>
+                    Review extracted code and suggested changes
+                    before using them in your project.
+                </p>
+
+            </section>
+
         </section>
 
     </main>
 
     <footer>
-        ReliGuard AI | Engineering Intelligence
+        ReliGuard AI 2.0 | Engineering Intelligence
     </footer>
-<script src="engineering.js"></script>
+
+
+    <script src="engineering.js"></script>
+
 </body>
 </html>

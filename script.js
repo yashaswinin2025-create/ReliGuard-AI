@@ -1,18 +1,14 @@
 
-const engineeringButton = document.querySelector(
-    '[data-module="engineering"]'
-);
+document.addEventListener("DOMContentLoaded", function () {
+    const engineeringButton = document.querySelector(
+        '[data-module="engineering"]'
+    );
 
-const bankingButton = document.querySelector(
-    '[data-module="banking"]'
-);
+    if (engineeringButton) {
+        engineeringButton.addEventListener("click", function () {
+            window.location.href = "engineering/index.html";
+        });
+    }
 
-engineeringButton.addEventListener("click", function () {
-    alert("Welcome to ReliGuard AI 1.0 - Engineering!");
+    console.log("ReliGuard AI Engineering is ready!");
 });
-
-bankingButton.addEventListener("click", function () {
-    alert("Welcome to ReliGuard AI 2.0 - Banking!");
-});
-
-console.log("ReliGuard AI is ready!");

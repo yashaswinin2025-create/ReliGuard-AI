@@ -70,7 +70,7 @@ nav a:hover {
     font-size: 15px;
 }
 
-/* Modules */
+/* Engineering module */
 .modules {
     padding: 30px 8% 90px;
     text-align: center;
@@ -79,6 +79,7 @@ nav a:hover {
 .modules > h2 {
     font-size: 29px;
     margin-bottom: 40px;
+    color: #ffffff;
 }
 
 .module-container {
@@ -94,8 +95,8 @@ nav a:hover {
     border-radius: 16px;
     padding: 35px 28px;
     width: 340px;
-    min-height: 300px;
-    text-align: left;
+    min-height: 360px;
+    text-align: center;
     transition: 0.3s ease;
 }
 
@@ -103,6 +104,12 @@ nav a:hover {
     transform: translateY(-7px);
     border-color: #35d8ff;
     box-shadow: 0 8px 30px rgba(53, 216, 255, 0.12);
+}
+
+/* Engineering icon */
+.module-icon {
+    font-size: 55px;
+    margin-bottom: 20px;
 }
 
 .module-card h3 {
